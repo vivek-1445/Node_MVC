@@ -1,0 +1,23 @@
+{
+  "name": "node_mvc",
+  "version": "1.0.0",
+  "description": "this is node mvc project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivek-1445/Node_MVC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vivek-1445/Node_MVC/issues"
+  },
+  "homepage": "https://github.com/vivek-1445/Node_MVC#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}
