@@ -8,4 +8,9 @@ routes.use('/profile',require('./users'));
 
 routes.get('/',home_controller.home);
 
+routes.get('/form',home_controller.form)
+
+routes.get('/table',home_controller.table)
+
+routes.get('/login',home_controller.login)
 module.exports = routes;
