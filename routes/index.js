@@ -15,4 +15,6 @@ routes.get('/table',home_controller.table)
 routes.get('/login',home_controller.login)
 
 routes.get('/register',home_controller.register)
+
+routes.post('/add-user-data',home_controller.addData);
 module.exports = routes;

@@ -2,11 +2,9 @@ const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 const port = 3000;
 const app = express();
-
-
-
+const db = require('./config/mongoose');
 const path = require('path');
-
+app.use(express.urlencoded());
 app.set('view engine','ejs');
 
 app.use(expressLayouts)
