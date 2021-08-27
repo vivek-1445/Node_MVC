@@ -43,6 +43,37 @@ module.exports.addData = function(req,res){
         return res.redirect('login');
     })
 }
+module.exports.loginUser = function(req,res){
+    userModel.findOne({email : req.body.email},function(err,userdata){
+        if(err){
+            console.log("user not found");
+            return;
+        }
+        else{
+            if(userdata){
+                if(userdata.password == req.body.password){
+                    let getalldataofUser = userdata
+                    console.log(getalldataofUser);
+                    res.cookie('user',getalldataofUser)
+                    return res.redirect('/dashboard');
+                }
+                else{
+                    return res.redirect('back');
+                }  
+            }
+            else{
+                console.log("data not fond");
+                return res.redirect('back');
+            }
+            
+        }
+    })
+} 
+
+module.exports.logout = function(req,res){
+    res.clearCookie("user");
+    return res.redirect('/login');
+}
 
 
 

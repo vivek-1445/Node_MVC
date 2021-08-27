@@ -24,27 +24,33 @@
   <link rel="shortcut icon" href="images/favicon.png" />
 </head>
 <body>
-  <% if(url != '/login' && url != '/register'){ %> 
-    <div class="container-scroller"> 
-      <%- include('layout/_header') %>
-      <div class="container-fluid page-body-wrapper">
-       <%- include('layout/_sidebar') %>
+  
+     
+  <% if (user) { %>
+    <% if(url != '/login' && url != '/register'){ %> 
+      <div class="container-scroller"> 
+        <%- include('layout/_header') %>
+        <div class="container-fluid page-body-wrapper">
+        <%- include('layout/_sidebar') %>
 
-        <div class="main-panel">
-          <div class="content-wrapper">
-            <div class="row">
-              <div class="col-sm-12">
-                <% } %>
-                  <%- body %>
-                <% if(url != '/login' && url != '/register'){ %> 
+          <div class="main-panel">
+            <div class="content-wrapper">
+              <div class="row">
+                <div class="col-sm-12">
+                  <% } %>
+                    <%- body %>
+                  <% if(url != '/login' && url != '/register'){ %> 
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        </div>
-    </div>
-        <%- include('layout/_footer') %>
+          </div>
+      </div>
+          <%- include('layout/_footer') %>
     <% } %>
+  <% }else{%>
+    <script> document.location.href = '/dashboard'; break; </script>
+  <% } %>
 
   <!-- plugins:js -->
   <script src="vendors/js/vendor.bundle.base.js"></script>

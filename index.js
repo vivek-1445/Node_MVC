@@ -1,10 +1,12 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
+var cookieParser = require('cookie-parser');
 const port = 3000;
 const app = express();
 const db = require('./config/mongoose');
 const path = require('path');
 app.use(express.urlencoded());
+app.use(cookieParser());
 app.set('view engine','ejs');
 
 app.use(expressLayouts)
@@ -16,7 +18,9 @@ app.get('/', function(req, res ,next) {
     res.redirect('/dashboard');
    });
 app.use(function(req, res, next) {
+     
     res.locals.url   = req.originalUrl;
+    res.locals.user = req.cookies.user;
     next();
  });
 app.use('/',require('./routes'));
