@@ -34,7 +34,6 @@ module.exports.addData = function(req,res){
         mobile : req.body.mobile,
         email : req.body.email,
         password : req.body.password
-
     },function(err,newUser){
         if(err){
             console.log("somthing went wrong in data user create data");
